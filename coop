@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Launcher for the coop CLI. All logic lives in the `coop_cli` Python package.
+# Works from any directory (./coop, /abs/path/coop) and via symlinks.
+set -euo pipefail
+DIR="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+PYTHONPATH="$DIR${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m coop_cli "$@"
+

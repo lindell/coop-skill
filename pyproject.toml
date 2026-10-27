@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coop-cli"
+version = "0.1.0"
+description = "Command-line client for Coop (search, cart, orders)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+coop = "coop_cli.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["coop_cli*"]
+
